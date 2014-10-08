@@ -3,5 +3,5 @@
 
 <dl>
 <dl> Next Raid: </dl>
-<dt> <%= 'Tue, 07 Oct 2014 21:43:56 +0000'.in_time_zone(@us_zones[current_user[:time_zone].to_i]) %> </dt>
+<dt> <%= Time.parse('2014-10-09 02:00:00 -0000'.in_time_zone(@current_zone).to_s).strftime("%I:%M %p %b %d") %> </dt>
 </dl>
