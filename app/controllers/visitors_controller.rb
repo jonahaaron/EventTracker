@@ -4,7 +4,7 @@ class VisitorsController < ApplicationController
   
   def index
     if current_user
-      @current_zone = ["Hawaii", "Alaska", "Pacific Time (US & Canada)", "Arizona", "Mountain Time (US & Canada)", "Central Time (US & Canada)", "Eastern Time (US & Canada)", "Indiana (East)"][current_user[:time_zone].to_i]
+      @current_zone = TimeZone.us_zones.map{|k|k.to_s.sub!(/^.{12}/, '')}[current_user[:time_zone].to_i]
     end
   end
   
